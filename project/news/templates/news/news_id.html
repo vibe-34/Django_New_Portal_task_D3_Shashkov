@@ -1,0 +1,13 @@
+{% extends 'new_portal/default.html'%}
+{% load custom_filters %}
+
+{% block title %}{{ article.title|censorship}}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ article.title|censorship }}</h1>
+        <p align="left">дата публикации     <b>{{ article.data|date:'d.M.Y'}}</b></p>
+        <p>{{ article.full_text|censorship }}</p>
+
+    </div>
+{% endblock %}
